@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="milucHaa.MainPage"
+             BackgroundColor="#fadadd"
+             NavigationPage.HasNavigationBar="False">
+    <ScrollView>
+    <StackLayout Margin="20,60">
+            <Button Text="Nueva emoción" x:Name="NuevaEmocion" Clicked="NuevaEmocion_Clicked"
+                    BackgroundColor="LightSalmon" TextTransform="None" CornerRadius="15"/>
+            <Entry x:Name="txtID" Placeholder="Emocion" IsVisible="false"/>
+        <Entry x:Name="txtEmocion" Placeholder="Emocion" IsVisible="false" IsReadOnly="True"/>
+            <Entry x:Name="txtToques" Placeholder="Toques" IsVisible="false" IsReadOnly="True"/>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Agregar" IsVisible="false" x:Name="btnAgregar" Clicked="btnAgregar_Clicked"
+                        BackgroundColor="LightSalmon" TextTransform="None" CornerRadius="15"/>
+                <Button Text="Restar" IsVisible="false" x:Name="btnRestar" Clicked="btnRestar_Clicked"
+                        BackgroundColor="LightSalmon" TextTransform="None" CornerRadius="15"/>
+                <ImageButton Source="drinks.jpeg" x:Name="Drinks" Clicked="Drinks_Clicked" IsVisible="false"
+                             WidthRequest="170"/>
+                <ImageButton Source="dudando.jpeg" x:Name="Dudando" Clicked="Dudando_Clicked" IsVisible="false"
+                             WidthRequest="170"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="enamorada.jpeg" x:Name="Enamorada" Clicked="Enamorada_Clicked" IsVisible="false"
+                             WidthRequest="170"/>
+                <ImageButton Source="feliz.jpeg" x:Name="Feliz" Clicked="Feliz_Clicked" IsVisible="false"
+                             WidthRequest="170"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="harta.jpeg" x:Name="Harta" Clicked="Harta_Clicked" IsVisible="false"
+                             WidthRequest="170"/>
+                <ImageButton Source="mesientofea.jpeg" x:Name="SientoFea" Clicked="SientoFea_Clicked" IsVisible="false"
+                             WidthRequest="170"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="mesientolinda.jpeg" x:Name="SientoLinda" Clicked="SientoLinda_Clicked" IsVisible="false"
+                             WidthRequest="170"/>
+                <ImageButton Source="neutra.jpeg" x:Name="Neutra" Clicked="Neutra_Clicked" IsVisible="false"
+                             WidthRequest="170"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="nonii.jpeg" x:Name="Nonii" Clicked="Nonii_Clicked" IsVisible="false"
+                             WidthRequest="170"/>
+                <ImageButton Source="pensativa.jpeg" x:Name="Pensativa" Clicked="Pensativa_Clicked" IsVisible="false"
+                             WidthRequest="170"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="pormatarme.jpeg" x:Name="PorMatarme" Clicked="PorMatarme_Clicked" IsVisible="false"
+                             WidthRequest="170"/>
+                <ImageButton Source="triste.jpeg" x:Name="Triste" Clicked="Triste_Clicked" IsVisible="false"
+                             WidthRequest="170"/>
+            </StackLayout>
+            <Button Text="Registrar" x:Name="btnRegistro" Clicked="btnRegistro_Clicked" IsVisible="false"
+                    BackgroundColor="LightSalmon" TextTransform="None" CornerRadius="15"/>
+            <Entry x:Name="EntryIMG" TextColor="Blue" IsVisible="false"/>
+            <Button Text="Actualizar" x:Name="btnActualizar" Clicked="btnActualizar_Clicked" IsVisible="false"
+                    BackgroundColor="LightSalmon" TextTransform="None" CornerRadius="15"/>
+            <Button Text="Eliminar" x:Name="btnEliminar" Clicked="btnEliminar_Clicked" IsVisible="false"
+                    BackgroundColor="LightSalmon" TextTransform="None" CornerRadius="15"/>
+        
+            <ListView x:Name="listaEmocion" BackgroundColor="White" 
+                      ItemSelected="listaEmocion_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <ViewCell>
+                        <Grid BackgroundColor="#f03687">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="{Binding Imagen}" WidthRequest="80" HeightRequest="50" Grid.Row="0" Grid.Column="0"/>
+                                <Label Text="{Binding Emocion}" Grid.Row="0" Grid.Column="1" TextColor="Black"/>
+                            <Label Text="{Binding Toques}" Grid.Row="0" Grid.Column="2" TextColor="Black"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+            
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
